@@ -1,15 +1,14 @@
-import React from "react";
-import useGenres from "../Hooks/useGenres";
+import useGenres, { Genre } from "../Hooks/useGenres";
 
 const GenresList = () => {
-  const { genres } = useGenres();
+  const { data } = useGenres();
   return (
     <ul>
-      {genres.map((genre) => (
+      {data.map((genre) => (
         <li key={genre.id}>{genre.name}</li>
       ))}
     </ul>
   );
 };
-
+//our component knows about the endpoint it should not happen..
 export default GenresList;
